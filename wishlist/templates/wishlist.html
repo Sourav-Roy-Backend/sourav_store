@@ -1,0 +1,25 @@
+{% extends 'sourav_store/base.html' %}
+
+{% block content %}
+<h1>Welcome to  your Wishlist page</h1>
+{% for item in cart_items %}
+<div>
+    <div style="margin-top: 50px; border-left-color: black;">
+      <div class="hero bg-base-200">
+        <div class="hero-content flex-col lg:flex-row gap-10">
+          <img src="{{item.product.image.url}}" class="w-[25%] rounded-lg shadow-2xl" />
+          <div>
+            <h5>Product Name : {{item.product.product_name}}</h5>
+            <h5 >Product Category : {{item.product.category}}</h5>
+            <h5 class=" font-bold">Product Available : {{item.product.is_available}}</h5>
+            <h5 class=" font-bold">Product Price : {{item.product.price}}</h5>
+            <h5 class=" font-bold">Product stock : {{item.product.stock}}</h5>
+            <p class="py-6">Description : {{item.product.description}}</p>
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock content %}

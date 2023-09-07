@@ -1,0 +1,29 @@
+{% extends "sourav_store/base.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Welcome tho your Profile</h1>
+<section style="text-align: center;margin-top: 30px;margin-left: 40%;">
+
+<div class="container">
+	<div class="row">
+	<aside class="col-md-3">
+		<!--   SIDEBAR   -->
+		<ul class="list-group">
+			<a class="list-group-item active" href="#"> Your order history </a>
+			<a class="list-group-item" href="{% url 'cart' %}"> your whishlist </a>
+			<a class="list-group-item" href="#"> Return and refunds </a>
+			<a class="list-group-item" href="#">Settings </a>
+			<a class="list-group-item" href="#"> My Selling Items </a>
+			<a class="list-group-item" href="#"> Received orders </a>
+		</ul>
+		<br>
+		<a class="btn btn-light btn-block" href="{% url 'logoutpage' %}"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a> 
+		<!--   SIDEBAR .//END   -->
+	</aside>
+	
+</div> <!-- row.// -->
+</div>
+
+
+</section>
+{% endblock%}

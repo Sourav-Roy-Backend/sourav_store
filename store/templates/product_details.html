@@ -1,0 +1,21 @@
+{% extends "sourav_store/base.html" %}
+{% block content %}
+<div class="card-body items-center text-center">
+    <figure class="px-10 pt-10">
+      <img src="{{product.image.url}}" alt="{{product.product_name}}" class="rounded-xl" />
+    </figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">{{product.product_name}}</h2>
+      <h2>Price : {{product.price}}</h2>
+      <h2>Stock : {{product.stock}}</h2>
+      <h2>Avaiable : {{product.is_available}}</h2>
+      <p>Description : {{product.description}}</p>
+      <h2>Average rate : 3</h2>
+      <div class="card-actions">
+        <button class="btn btn-primary"><a style="color: black;text-decoration: none; " href="{% url 'add_cart' product.id %}">Add to Wishlist</a></button>
+        <button class="btn btn-primary"><a style="color: black;text-decoration: none; " href="#">Write Review</a></button>
+      </div>
+    </div>
+  </div>
+  
+{% endblock content %}
