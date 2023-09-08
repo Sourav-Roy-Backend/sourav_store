@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>Welcome to  your Wishlist page</h1>
+<h1><a style="text-decoration: none;" href="{% url 'homepage' %}">Go to Search Product</a></h1>
 {% for item in cart_items %}
 <div>
     <div style="margin-top: 50px; border-left-color: black;">

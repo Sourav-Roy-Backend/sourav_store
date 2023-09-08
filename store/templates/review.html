@@ -1,0 +1,20 @@
+{% extends "sourav_store/base.html" %}
+{% block content %}
+<h1>write your review</h1>
+<form method="POST" style="margin-top: 50px; ">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Rate this Product</label>
+      <br>
+      {{form.rate}}
+      <br>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Write your Review</label>
+      <br>
+      {{form.content}}
+      <br>
+    </div>
+    <button type="submit" class="btn btn-primary"><a style="text-decoration: none; color: black;" href="{% url 'homepage' %}">Submit</a></button>
+  </form>
+{% endblock content %}

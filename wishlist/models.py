@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User 
 from store.models import Product
 # Create your models here.
 class Cart(models.Model):
@@ -14,8 +15,18 @@ class CartItem(models.Model):
     quantity = models.IntegerField()
     is_active = models.BooleanField(default=True)
     
-    def sub_total(self):
-        return self.product.price * self.quantity
     
     def __str__(self):
         return str(self.product)
+    
+
+ 
+class Review(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    content = models.TextField()
+    rate = models.IntegerField(default=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.content

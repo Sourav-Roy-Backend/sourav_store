@@ -16,3 +16,7 @@ def home(request,category_slug=None):
     
     context = {'products':products,'categories': categories}
     return render(request,'sourav_store/base.html',context)
+
+def orderby(request):
+    products = Product.objects.all().order_by('price')
+    return render(request, 'sourav_store/base.html', {'products': products})

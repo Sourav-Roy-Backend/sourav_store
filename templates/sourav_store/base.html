@@ -32,6 +32,16 @@
                   
                 </ul>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Order by
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'order_by_price'%}">price</a></li>
+                 
+                  
+                </ul>
+              </li>
               
               {% if request.user.is_authenticated %}
               <li class="nav-item">
@@ -82,9 +92,9 @@
                 <h5 class="card-title"><a style="text-decoration: none;" href="{% url 'product_detail' i.category.slug i.slug %}">{{i.product_name}}</a></h5>
                 <h5 class="card-title">BDT:{{i.price}}</h5>
                 <p class="card-text">Description : {{i.description}}</p>
-                <h5>Rate : 3 </h5>
+                <h5>Rate : {{request.review.rate}}</h5>
                 <button class = 'btn btn-primary'><a href="{% url 'add_cart' i.id %}" style="color: black; text-decoration: none">Add to Wishlist</a></button>
-                <button class = 'btn btn-primary'><a href="#" style="color: black; text-decoration: none">Write Rewiew</a></button>
+                <button class = 'btn btn-primary'><a href="{% url 'reviewpage' %}" style="color: black; text-decoration: none">Write Rewiew</a></button>
               </div>
             </div>
           </div>  

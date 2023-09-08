@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='homepage'),
     path('category/<slug:category_slug>/',views.home, name = 'products_by_category'),
+    path('orderby/',views.orderby, name = 'order_by_price'),
     path('accout/',include('account.urls')),
     path('wishlist/',include('wishlist.urls')),
     path('store/',include('store.urls')),
